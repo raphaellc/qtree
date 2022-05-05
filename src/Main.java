@@ -59,9 +59,8 @@ public class Main {
         //search rectangle
         StdDraw.setPenColor(c2);
         StdDraw.setPenRadius(0.005);
-        Rectangle searchBoundary = new Rectangle(searchX, searchY, searchWidth, searchHeight);
-        StdDraw.rectangle(searchX, searchY, searchWidth, searchHeight);
-
+        Rectangle searchBoundary = new Rectangle(StdDraw.mouseX(), StdDraw.mouseY(), searchWidth, searchHeight);
+        StdDraw.rectangle(StdDraw.mouseX(), StdDraw.mouseY(), searchWidth, searchHeight);
         ArrayList<Point> searchResult = quadTree.search(searchBoundary);
         for (Point point : searchResult) {
             point.show(c2);
