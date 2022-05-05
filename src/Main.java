@@ -54,17 +54,24 @@ public class Main {
         /*
          * Visualization
          */
+        while(true){
         quadTree.show();
 
-        //search rectangle
-        StdDraw.setPenColor(c2);
-        StdDraw.setPenRadius(0.005);
-        Rectangle searchBoundary = new Rectangle(StdDraw.mouseX(), StdDraw.mouseY(), searchWidth, searchHeight);
-        StdDraw.rectangle(StdDraw.mouseX(), StdDraw.mouseY(), searchWidth, searchHeight);
-        ArrayList<Point> searchResult = quadTree.search(searchBoundary);
-        for (Point point : searchResult) {
-            point.show(c2);
+
+            //search rectangle
+            StdDraw.setPenColor(c2);
+            StdDraw.setPenRadius(0.005);
+            Rectangle searchBoundary = new Rectangle(StdDraw.mouseX(), StdDraw.mouseY(), searchWidth, searchHeight);
+            StdDraw.rectangle(StdDraw.mouseX(), StdDraw.mouseY(), searchWidth, searchHeight);
+            ArrayList<Point> searchResult = quadTree.search(searchBoundary);
+            for (Point point : searchResult) {
+                point.show(c2);
+            }
+            StdDraw.pause(500);
+
+            if (StdDraw.hasNextKeyTyped()) break;
         }
+
     }
 }
 
